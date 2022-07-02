@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PwSpecFlowDemoTest": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
