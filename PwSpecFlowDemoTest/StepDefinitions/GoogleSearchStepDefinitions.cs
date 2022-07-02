@@ -5,12 +5,12 @@ using TechTalk.SpecFlow;
 namespace PwSpecFlowDemoTest.StepDefinitions
 {
     [Binding]
-    public sealed class CalculatorStepDefinitions
+    public sealed class GoogleSearchStepDefinitions
     {
         private readonly SearchPage _searchPage;
         private readonly ResultPage _resultPage;
 
-        public CalculatorStepDefinitions(SearchPage searchPage, 
+        public GoogleSearchStepDefinitions(SearchPage searchPage, 
             ResultPage resultPage)
         {
             _searchPage = searchPage;
