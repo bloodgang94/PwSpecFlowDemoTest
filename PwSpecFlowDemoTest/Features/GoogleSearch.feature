@@ -1,4 +1,4 @@
-﻿Feature: Calculator
+﻿Feature: SearchGoogle
 
 Search google test
 

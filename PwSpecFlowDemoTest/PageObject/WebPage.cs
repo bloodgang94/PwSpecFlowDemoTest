@@ -11,9 +11,7 @@ namespace PwSpecFlowDemoTest.PageObject
     {
         protected readonly IPage Page;
 
-        public WebPage (IPage page)
-        {
-            Page = page;
-        }
+        public WebPage (IPage page) => Page = page;
+
     }
 }

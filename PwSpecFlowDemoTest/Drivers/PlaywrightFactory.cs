@@ -13,16 +13,15 @@ namespace PwSpecFlowDemoTest.Drivers
         public static async Task<IBrowser> CreateDriverAsync(PlaywrightConfig pwDto)
         {
             var playwright = await Playwright.CreateAsync();
-            var browser = pwDto.Browser switch
+
+            var pwBrowser = pwDto.RunTypeBrowser switch
             {
-                Browser.Chrome => playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions() { Channel = "chrome"}),
-                Browser.Firefox => playwright.Firefox.LaunchAsync(),
-                Browser.Chromium => playwright.Chromium.LaunchAsync(),
-                Browser.WebKit => playwright.Webkit.LaunchAsync(),
-                _ => throw new NotImplementedException(nameof(pwDto.Browser))
+                RunTypeBrowser.Local => new LocalPlaywrightDriver().InitDriverAsync(playwright, pwDto),
+                RunTypeBrowser.Wss => new WssPlaywrightDriver().InitDriverAsync(playwright, pwDto),
+                _ => throw new ArgumentOutOfRangeException()
             };
 
-            return await browser;
+            return await pwBrowser;
         }
     }
 }

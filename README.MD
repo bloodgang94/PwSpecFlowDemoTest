@@ -17,3 +17,12 @@ cd PwSpecFlowDemoTest
 docker build --tag pwtest .
 docker run --rm -it pwtest
 ```
+
+## Moon launch 
+
+```bash
+change appsettings.json
+wssUrl // example "wss://moon.service/playwright/ 
+runTypeBrowser = 1 // moon
+
+```
